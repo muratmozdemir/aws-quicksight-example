@@ -46,7 +46,7 @@ The Terraform script will setup the following resources:
 
 ## Important Note
 
-Be aware that AWS charges for the use of these services. Be sure to destroy the Terraform resources when you're done using them to avoid unnecessary costs:
+- Be aware that AWS charges for the use of these services. Be sure to destroy the Terraform resources when you're done using them to avoid unnecessary costs:
 
     ```
     terraform destroy
