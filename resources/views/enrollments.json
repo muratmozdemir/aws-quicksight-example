@@ -1,0 +1,15 @@
+{
+    "originalSql": "SELECT DISTINCT \"student_id\", \"enrolled_class\" FROM \"enrollments_db\".\"enrollments\"",
+    "catalog": "awsdatacatalog",
+    "schema": "students_db",
+    "columns": [
+        {
+            "name": "student_id",
+            "type": "bigint"
+        },
+        {
+            "name": "enrolled_class",
+            "type": "varchar"
+        }
+    ]
+}

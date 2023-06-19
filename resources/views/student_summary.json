@@ -1,0 +1,23 @@
+{
+    "originalSql": "SELECT DISTINCT \"id\", \"name\", \"favorite_color\", \"country\" FROM \"students_db\".\"students\"",
+    "catalog": "awsdatacatalog",
+    "schema": "students_db",
+    "columns": [
+        {
+            "name": "id",
+            "type": "bigint"
+        },
+        {
+            "name": "name",
+            "type": "varchar"
+        },
+        {
+            "name": "favorite_color",
+            "type": "varchar"
+        },
+        {
+            "name": "country",
+            "type": "varchar"
+        }
+    ]
+}
