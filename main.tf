@@ -23,15 +23,15 @@ resource "aws_s3_bucket" "athena_query_results_bucket" {
 resource "aws_s3_object" "students_parquet_file" {
   bucket = aws_s3_bucket.students_bucket.id
   key    = "students/students.parquet"
-  source = "${path.module}/data/students.parquet"
-  etag   = filemd5("${path.module}/data/students.parquet")
+  source = "${path.module}/resources/data/students.parquet"
+  etag   = filemd5("${path.module}/resources/data/students.parquet")
 }
 
 resource "aws_s3_object" "enrollments_parquet_file" {
   bucket = aws_s3_bucket.students_bucket.id
   key    = "enrollments/enrollments.parquet"
-  source = "${path.module}/data/enrollments.parquet"
-  etag   = filemd5("${path.module}/data/enrollments.parquet")
+  source = "${path.module}/resources/data/enrollments.parquet"
+  etag   = filemd5("${path.module}/resources/data/enrollments.parquet")
 }
 
 # Glue Databases
@@ -160,7 +160,7 @@ resource "aws_glue_catalog_table" "student_summary_view" {
   name          = "student_summary"
 
   table_type         = "VIRTUAL_VIEW"
-  view_original_text = "/* Presto View: ${base64encode(file("${path.module}/data/views/student_summary.json"))} */"
+  view_original_text = "/* Presto View: ${base64encode(file("${path.module}/resources/views/student_summary.json"))} */"
   view_expanded_text = "/* Presto View */"
 
   parameters = {
@@ -200,7 +200,7 @@ resource "aws_glue_catalog_table" "enrollments_view" {
   name          = "enrollments"
 
   table_type         = "VIRTUAL_VIEW"
-  view_original_text = "/* Presto View: ${base64encode(file("${path.module}/data/views/enrollments.json"))} */"
+  view_original_text = "/* Presto View: ${base64encode(file("${path.module}/resources/views/enrollments.json"))} */"
   view_expanded_text = "/* Presto View */"
 
   parameters = {
