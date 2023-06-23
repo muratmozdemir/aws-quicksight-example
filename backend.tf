@@ -13,10 +13,9 @@ terraform {
   }
 
   required_providers {
-    aws-test = {
-      source  = "BigEyeLabs/aws-test"
-      version = ">= 5.4.2"
-      # configuration_aliases = [ aws-test.aws ]
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.5.0"
     }
   }
 
